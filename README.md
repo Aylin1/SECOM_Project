@@ -1,20 +1,51 @@
-# SECOM_Project
-## SECOM Data Set Information
+# SECOM Fault Detection Project 🔍
 
-A complex modern semi-conductor manufacturing process is normally under consistent surveillance via the monitoring of signals/variables collected from sensors and or process measurement points. However, not all of these signals are equally valuable in a specific monitoring system. The measured signals contain a combination of useful information, irrelevant information as well as noise. It is often the case  that useful information is buried in the latter two. Engineers typically have a much larger number of signals than are actually required. If we consider each type  of signal as a feature, then feature selection may be applied to identify the most relevant signals. The Process Engineers may then use these signals to determine key factors contributing to yield excursions downstream in the process. This will enable an increase in process throughput, decreased time to learning and reduce the per unit production costs.
+This repository contains the final code and analysis for the SECOM Equipment Fault Detection project, conducted as part of an academic data mining course. The objective was to analyze sensor data from semiconductor manufacturing equipment to identify and classify potential faults using statistical modeling and machine learning techniques.
 
-Numerical data are recorded values from a series of sensors in the production machines that are placed in specified locations to help identify the part of the production process which contributes to the faults.
+## 📘 Project Overview
 
-## Objective
-To minimize the rate at which faulty products leave the factory, the numerical data starts to make sense.
+The SECOM dataset includes sensor measurements from a semiconductor fabrication process. The goal is to build a predictive model that can detect faulty equipment behavior, helping to reduce costs and improve yield in high-precision manufacturing.
 
-*   To enhance current business improvement techniques, we use feature selection techniques to rank features according to their impact on the overall yield for the product.
+### 🔧 Main Tasks:
 
-    *   Causal relationships may also be considered with a view to identifying the key features.
-Dimensionality reduction techniques:
+- Exploratory Data Analysis (EDA)
+- Feature selection and dimensionality reduction
+- Handling missing values
+- Building classification models
+- Model evaluation and optimization using grid search
 
-- Percent Missing Values
-- Ammount of Variation
-- Pairwise Correlation
-- Correlation with Target
-- Recursive feature elimination
+
+> ⚠️ **Note**: Due to licensing restrictions, the SECOM dataset is not included in this repository. You can download it from the UCI Machine Learning Repository:  
+> [SECOM Dataset on UCI ML Repository](https://archive.ics.uci.edu/ml/datasets/SECOM)
+
+## 📊 Techniques Used
+
+- **Data Preprocessing**:
+  - Replacing missing values with statistical imputation
+  - Normalizing and standardizing features
+  - Removing constant/near-zero variance features
+
+- **Feature Engineering**:
+  - Principal Component Analysis (PCA)
+  - Recursive Feature Elimination (RFE)
+
+- **Modeling**:
+  - Logistic Regression
+  - Random Forest
+  - Support Vector Machines (SVM)
+  - Hyperparameter tuning via GridSearchCV
+
+- **Evaluation Metrics**:
+  - Accuracy, Precision, Recall, F1-score
+  - ROC-AUC
+
+## 🧠 Key Insights
+
+- Many sensors are redundant or inactive; dimensionality reduction is crucial.
+- Class imbalance poses challenges; handled via balanced metrics and model tuning.
+- Random Forest performed best in terms of generalization and interpretability.
+
+## 🛠 Technologies
+
+- **Languages**: Python  
+- **Libraries**: `pandas`, `numpy`, `scikit-learn`, `matplotlib`, `seaborn`
